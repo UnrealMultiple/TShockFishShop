@@ -29,25 +29,17 @@ public class Config
     {
         if (File.Exists(path))
         {
-            return JsonConvert.DeserializeObject<Config>(File.ReadAllText(path), new JsonSerializerSettings()
-            {
-                Error = (sender, error) => error.ErrorContext.Handled = true
-            });
+            return JsonConvert.DeserializeObject<Config>(File.ReadAllText(path));
         }
-        else
-        {
-            // 读取内嵌配置文件
-            string text = utils.FromEmbeddedPath("FishShop.res.config.json");
-            Config c = JsonConvert.DeserializeObject<Config>(text, new JsonSerializerSettings()
-            {
-                Error = (sender, error) => error.ErrorContext.Handled = true
-            });
 
-            // 将内嵌配置文件拷出
-            File.WriteAllText(path, text);
+        // 读取内嵌配置文件
+        var text = utils.FromEmbeddedPath("FishShop.res.config.json");
+        var c = JsonConvert.DeserializeObject<Config>(text);
 
-            return c;
-        }
+        // 将内嵌配置文件拷出
+        File.WriteAllText(path, text);
+
+        return c;
     }
 
     public static void GenConfig(string path)
