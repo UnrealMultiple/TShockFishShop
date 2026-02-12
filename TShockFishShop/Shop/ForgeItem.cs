@@ -18,7 +18,7 @@ public class ForgeItem : ShopItem
         if (msg != "") return msg;
 
         Item forgeItem = op.TPlayer.inventory[0];
-        int id = forgeItem.netID;
+        int id = forgeItem.type;
         if (id == 0) return "需将要重铸的物品，放在背包的第1格！";
         if (!Prefix.CanHavePrefixes(forgeItem)) return $"[i:{id}]不能重铸";
 
@@ -65,7 +65,7 @@ public class ForgeItem : ShopItem
     public override void ProvideGoods()
     {
         Item forgeItem = op.TPlayer.inventory[0];
-        int id = forgeItem.netID;
+        int id = forgeItem.type;
 
         Item item = new();
         item.SetDefaults(id);

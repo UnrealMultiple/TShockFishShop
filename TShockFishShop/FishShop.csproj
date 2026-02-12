@@ -3,16 +3,14 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>1.4.5</Version>
+    <Version>1.4.6</Version>
     <AssemblyTitle>FishShop</AssemblyTitle>
-    <Company></Company>
     <Product>FishShop</Product>
     <Copyright>Copyright © hufang360 2022</Copyright>
     <!-- extras for nuget -->
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <PackageLicenseExpression></PackageLicenseExpression>
     <Authors>hufang360</Authors>
     <Description>指令商店，支持使用金币和物品来购买 物品、召唤boss、生成NPC、获得buff、调时间 等。</Description>
     <PackageId>FishShop</PackageId>
@@ -30,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="UnrealMultiple.TShock.Temp" Version="5.2.1" />
+    <PackageReference Include="UnrealMultiple.TShock-Beta" Version="6.0.1" />
   </ItemGroup>
 
 </Project>
